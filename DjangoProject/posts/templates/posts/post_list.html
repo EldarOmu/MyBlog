@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Блог</title>
+    <style> body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; } </style>
+</head>
+<body>
+    <h1>Добро пожаловать в мой блог!</h1>
+    <hr>
+
+    {% for post in posts %}
+        <article>
+            <h2>
+                <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
+            </h2>
+            <p><i>Опубликовано: {{ post.pub_date }}</i></p>
+            <p>{{ post.content|truncatewords:30 }}</p> </article>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
