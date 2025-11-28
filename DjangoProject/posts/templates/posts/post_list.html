@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Мой Блог</title>
@@ -14,7 +14,7 @@
             <h2>
                 <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
             </h2>
-            <p><i>Опубликовано: {{ post.pub_date }}</i></p>
+            <p><i>Опубликовано: {{ post.pub_date }}/a</i></p>
             <p>{{ post.content|truncatewords:30 }}</p> </article>
         <hr>
     {% endfor %}
